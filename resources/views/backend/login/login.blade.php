@@ -15,7 +15,7 @@
               <input type="password" placeholder="Enter Password" name="password" required>
           
               <button type="submit">LOGIN</button>
-              <a class="forgot" href="">FORGOT ?</a>
+              <a class="forgot" href="{{ route('forget.password.get') }}">FORGOT ?</a>
             </div>
           </form>
     </center>
