@@ -20,7 +20,7 @@ header{
     margin-left: 30px;
     margin-top: 5px;
 }
-.logout_button{
+/* .logout_button{
     padding: 5px;
     background: #3da69a;
     float: right;
@@ -32,7 +32,7 @@ header{
     font-weight: 600;
     transition: 0.5s;
     transition-property: background;
-}
+} */
 .logout_button:hover{
     background: #276961;
 }

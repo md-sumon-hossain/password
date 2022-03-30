@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\backend;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -13,7 +14,34 @@ class LoginController extends Controller
     }
 
     #it will execute the login functionalities
-    public function dologin(){
+    #here, this method will post the login credentials
+    public function dologin(Request $request){
+        //    dd($request->all());
         
+    
+        # get decleared value  inside () excepting token(csrf)
+        // $variable=$request->only('email','password');
+    
+        # get others value excepting token(csrf)
+        $variable=$request->except('_token');
+        if (Auth::attempt($variable)) {
+            # code...
+            return view('backend.master');
+        }
+        else {
+            # code...
+            return redirect()->back();
+            }
     }
+
+
+    #logout
+     public function logout(){
+        Auth::logout();
+        return redirect()->route('loginform');
+    }
+        
+
+        
+    
 }

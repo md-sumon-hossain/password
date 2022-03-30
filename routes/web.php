@@ -22,3 +22,4 @@ Route::get('/', function () {
 Route::get('/loginform', [LoginController::class, 'loginform'])->name('loginform');
 Route::post('/dologin', [LoginController::class, 'dologin'])->name('dologin');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
