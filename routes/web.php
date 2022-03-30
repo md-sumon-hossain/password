@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\backend\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('backend.master');
 });
+
+#login
+Route::get('/loginform', [LoginController::class, 'loginform'])->name('loginform');
+Route::post('/dologin', [LoginController::class, 'dologin'])->name('dologin');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
