@@ -68,7 +68,8 @@ class ForgotPasswordController extends Controller
       public function submitResetPasswordForm(Request $request){
         $request->validate([
             'reset_token'=>'required',
-            'password'=>'required|confirmed',
+            'password' => 'required|string|min:6|confirmed',
+            'password_confirmation' => 'required'
         ]);
         //check token exist or not
         $userHasToken=User::where('reset_token',$request->reset_token)->first();
