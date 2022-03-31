@@ -80,10 +80,12 @@ Latest commit e3b92b8 6 days ago
                                         password has been generated for you. To reset your password, click the
                                         following link and follow the instructions.
                                     </p>
-                                    <a href="{{$gLink}}"
+                                    
+                                    <a href="{{ $gLink }}"
                                        style="background:#20e277;text-decoration:none !important; font-weight:500; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">
                                         Reset
                                         Password</a>
+                                      
                                 </td>
                             </tr>
                             <tr>
@@ -123,3 +125,36 @@ Training
 Blog
 About
 Loading complete
+
+
+
+
+{{-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url('/backend/login/css/style.css') }}">
+</head>
+<body>
+    <center>
+        <form action="{{ route('reset.password.post') }}" method="post">
+          @csrf
+
+            @if(session()->has('msg'))
+                <p class="alert alert-danger"><b>{{session()->get('msg')}}</b></p>
+            @endif
+
+            <div class="container">
+              <label for="uname"><b>PLEASE ENTER YOUR PASSWORD</b></label>
+              <input type="password" placeholder="Enter Password" name="password" required>
+
+              <label for="uname"><b>RETYPE YOUR PASSWORD</b></label>
+              <input type="password" placeholder="Retype Password" name="email" required>
+            </div>
+            <div>
+                <button type="submit">SUBMIT</button>
+            </div>
+          </form>
+    </center>
+    
+</body>
+</html> --}}
