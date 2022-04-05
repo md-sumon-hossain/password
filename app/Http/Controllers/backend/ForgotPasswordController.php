@@ -58,7 +58,7 @@ class ForgotPasswordController extends Controller
       #view the blade with the link
       public function showResetPasswordForm($token){
         //   $glink;
-         return view('backend.login.resetPassword',compact('token'));
+         return view('backend.login.newPasswordForm',compact('token'));
       }
 
 

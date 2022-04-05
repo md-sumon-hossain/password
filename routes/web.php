@@ -15,9 +15,13 @@ use App\Http\Controllers\backend\ForgotPasswordController;
 |
 */
 
-Route::get('/', function () {
-    return view('backend.master');
+#middleware
+Route::group(['middleware'=>'auth:web,employee'],function(){
+    Route::get('/', function () {
+        return view('backend.login.login');
+    });
 });
+
 
 #login
 Route::get('/loginform', [LoginController::class, 'loginform'])->name('loginform');

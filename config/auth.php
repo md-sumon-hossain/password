@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\User;
+use App\Models\Employee;
+
 return [
 
     /*
@@ -17,7 +20,10 @@ return [
         'guard' => 'web',
         'passwords' => 'users',
     ],
-
+    'employee' => [
+        'guard' => 'employee',
+        'passwords' => 'employees',
+    ],
     /*
     |--------------------------------------------------------------------------
     | Authentication Guards
@@ -39,6 +45,10 @@ return [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
+        ],
+        'employee' => [
+            'driver' => 'session',
+            'provider' => 'employees',
         ],
     ],
 
@@ -63,6 +73,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'employees' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Employee::class,
         ],
 
         // 'users' => [
@@ -89,6 +103,13 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'employees' => [
+            'provider' => 'employees',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

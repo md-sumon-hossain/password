@@ -24,7 +24,7 @@ class LoginController extends Controller
     
         # get others value excepting token(csrf)
         $variable=$request->except('_token');
-        if (Auth::attempt($variable)) {
+        if(Auth::guard('web')->attempt($variable)||Auth::guard('employee')->attempt($variable)){
             # code...
             return view('backend.master');
         }
