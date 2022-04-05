@@ -96,4 +96,22 @@
   .container a:hover{
       background: #ff8000;
   }
+  /* .registration {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    float: left;
+    border-radius: 3px;
+    transition: 0.5s;
+    transition-property: background;
+    
+  }
+  .registration:hover{
+    background: #ff8000;
+
+  } */
   

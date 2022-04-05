@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\LoginController;
 use App\Http\Controllers\backend\ForgotPasswordController;
+use App\Http\Controllers\backend\RegistrationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,8 @@ Route::group(['middleware'=>'auth:web,employee'],function(){
     });
 });
 
+#registration
+Route::get('/registration',[RegistrationController::class, 'registrationform'])->name('registration');
 
 #login
 Route::get('/loginform', [LoginController::class, 'loginform'])->name('loginform');
