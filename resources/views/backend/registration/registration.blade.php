@@ -5,7 +5,7 @@
 </head>
 <body>
     <center>
-        <form action="" method="post">
+        <form action="{{ route('registration.post') }}" method="post">
           @csrf
             <div class="container">
               <label for="name"><b>NAME</b></label>

@@ -25,6 +25,7 @@ Route::group(['middleware'=>'auth:web,employee'],function(){
 
 #registration
 Route::get('/registration',[RegistrationController::class, 'registrationform'])->name('registration');
+Route::post('/registration',[RegistrationController::class, 'registrationpost'])->name('registration.post');
 
 #login
 Route::get('/loginform', [LoginController::class, 'loginform'])->name('loginform');
