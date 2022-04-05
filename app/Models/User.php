@@ -44,4 +44,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    #accessor
+    #here we will make a formate for the attributes we want to. 
+    #the php magic method get wiil  be used here. the functon name will start with 'get' and end with 'Attribute' and in the middle of these two we will write the name of the attributes we want to set a formate
+    public function getNameEmailAttribute(){
+        return $this->name .'-'.$this->email;
+    }
 }
