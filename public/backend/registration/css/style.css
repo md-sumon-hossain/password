@@ -1,0 +1,16 @@
+.registration_button a{
+    float: right;
+    margin-right: 70px;
+    text-decoration: none;
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: 0.5s;
+    transition-property: background;
+}
+.registration_button a:hover{
+    background-color: tomato;
+}

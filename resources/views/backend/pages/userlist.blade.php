@@ -6,8 +6,10 @@
 
 <div class="container" style="margin-top: 100px; margin-left: 30px;">
 <h1>USER LIST</h1>
-
-    {{-- <a href="" class="btn btn-success">Create an employee</a> --}}
+    <link rel="stylesheet" href="{{ asset('backend/registration/css/style.css') }}">
+    <div class="registration_button">
+        <a href="{{ route('registration') }}" class="btn btn-success">ADD USER</a>
+    </div>
     <table class="table">
         <thead>
         <tr>

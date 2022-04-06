@@ -46,6 +46,6 @@ class RegistrationController extends Controller
             'image'=>$filename,
         ]);
 
-        return redirect()->route('loginform');
+        return redirect()->route('backend.userlist');
     }
 }
