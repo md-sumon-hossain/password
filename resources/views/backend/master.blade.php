@@ -14,10 +14,17 @@
     @include('backend.fixed.header')
 
 
+    <div style="display: flex;">
     <!-- sidebar starts-->
+    <div style="width: 16%;">
     @include('backend.fixed.sidebar')
+    </div>
+    <div style="width: 84%;">
     @yield('content')
+    </div>
+    </div>
 
+<!-- sidebar ends-->
 
     <!-- footer starts-->
         {{-- <div class="footer">

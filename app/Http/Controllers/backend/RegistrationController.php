@@ -25,7 +25,7 @@ class RegistrationController extends Controller
             $filename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
     
             #step 3 : store into project directory
-            $file->storeAs('/uploads/image',$filename);
+            $file->storeAs('images',$filename);
 
         }
         
@@ -41,6 +41,8 @@ class RegistrationController extends Controller
                 #w-2: the default filesystem disk should be public
             #step-3: in the form by which we the image is supposed to be submitted
                 #w-1: we need to declear  <  enctype="multipart/form-data" >
+            #step-4: in the list blade we need to define it by    <img src="{{asset('/uploads/images'.$user->image)}}" width="90px">
+            #step-5: command this-> php artisan storage:link    to declear the image directory
             'image'=>$filename,
         ]);
 

@@ -6,7 +6,7 @@
 
     {{-- calling accessor --}}
     <div class="right_area">
-        {{ Auth::user()->name_email }}
+        {{-- {{ Auth::user()->name_email }} --}}
     </div>
 </header>
 <!-- header ends-->
