@@ -50,7 +50,7 @@ class User extends Authenticatable
     #mutators actually set somethig to the value of any attributes. here it sets that all the name value of this particular model, will get the uppercase letters. the function name must be 'set' + Attribute name + 'Attribute'. we need to pass a variable which will contain the given value and execute the instructions
 
     public function setNameAttribute($value){
-        $this->attribute['name']= strToUpper($value);
+        $this->attributes['name']= strToUpper($value);
         
     }
 
