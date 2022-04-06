@@ -21,5 +21,14 @@ class UserController extends Controller
     }
 
 
-    
+
+    public function userDetails($user_id){
+        #if we want to get a collection of data then we use   <  get(), all()> and read them with foreach loop
+        #collection= get(), all()====== read with loop (foreach)
+
+        #if we want to read any object or single item we can use  < first(), Find(), findOrFail() and can directly access them
+        #object= first(), find(), findOrFail(),======direct
+      $user=User::find($user_id);
+        return view('backend.pages.userDetails',compact('user'));
+    }    
 }

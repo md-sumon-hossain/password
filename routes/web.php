@@ -39,6 +39,9 @@ Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPa
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 
-#user details view
+#user list view
 Route::get('/userlist',[UserController::class,'viewUserlist'])->name('backend.userlist');
+
+#user details view
+Route::get('/user/details/{user_id}',[UserController::class,'userDetails'])->name('backend.userDetails');
 
