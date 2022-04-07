@@ -34,7 +34,7 @@
         </div> --}}
     <!-- sfooter ends-->
 
-
+@stack('js')
 
 </body>
 </html>

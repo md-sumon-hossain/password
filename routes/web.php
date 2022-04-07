@@ -8,6 +8,7 @@ use App\Http\Controllers\backend\DatatablesControllers;
 use App\Http\Controllers\backend\EmployeeController;
 use App\Http\Controllers\backend\RegistrationController;
 use App\Http\Controllers\backend\ForgotPasswordController;
+use App\Http\Controllers\backend\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,4 +58,10 @@ Route::get('delete/user/{user_id}',[UserController::class,'userDelete'])->name('
 
 
 #yajra datatables
-Route::get('/employee/list',[DatatableController::class,'employeeList'])->name('backend.datatable.employeelist');
+Route::get('/employee/list',[PostController::class,'yajraList'])->name('yajra.post.list');
+#post 
+Route::get('/post',[PostController::class,'postform'])->name('post.form');
+Route::post('/post',[PostController::class,'postsubmit'])->name('post.submit');
+Route::get('post/list',[PostController::class,'postlist'])->name('post.list');
+
+

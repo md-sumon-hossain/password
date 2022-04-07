@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Employee;
 use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables;
 
 class DatatableController extends Controller
 {
@@ -15,8 +17,23 @@ class DatatableController extends Controller
         # php artisan tinker--- in the terminal 
         #User::factory()->count(20)->create()-- in the terminal
     #step-4: Add Route in web.php , the route should be type of 'get' method
+    #Step-5: create controller
 
-    public function employeeList(){
+
+        #w-1: this method should contain arequest variable
+    public function employeeList(Request $request){
+        if ($request->ajax()) {
+            $data = Employee::select('*');
+            return DataTables::of($data)
+                    ->addIndexColumn()
+                    ->addColumn('action', function($row){
+                           $btn = '<a href="javascript:void(0)" class="edit btn btn-primary btn-sm">View</a>';
+                            return $btn;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+        }
+        return view('backend.employee.employeelist');
         
     }
 }
