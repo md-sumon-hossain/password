@@ -29,7 +29,7 @@
                     <td><img src="{{asset('/uploads/images/'.$user->image)}}" width="90px" alt="nothing"></td>
                     <td>
                         <a href="{{ route('backend.userDetails',$user->id) }}"><i class="fa-solid fa-eye"></i></a>
-                        <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="{{ route('backend.user.edit',$user->id) }}"><i class="fa-solid fa-pen-to-square"></i></a>
                         <a href="#"><i class="fa-solid fa-trash-can"></i></a>
                     </td>
                 </tr>

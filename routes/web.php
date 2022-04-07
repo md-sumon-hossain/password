@@ -42,6 +42,9 @@ Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPass
 #user list view
 Route::get('/userlist',[UserController::class,'viewUserlist'])->name('backend.userlist');
 
-#user details view
-Route::get('/user/details/{user_id}',[UserController::class,'userDetails'])->name('backend.userDetails');
 
+
+#CRUD user details view
+Route::get('/user/details/{user_id}',[UserController::class,'userDetails'])->name('backend.userDetails');
+Route::get('/update/user/{user_id}',[UserController::class,'userEdit'])->name('backend.user.edit');
+Route::put('/update/user/{user_id}',[UserController::class,'userUpdate'])->name('backend.userUpdate');
