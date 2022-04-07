@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\backend\LoginController;
+use App\Http\Controllers\backend\DatatableController;
+use App\Http\Controllers\backend\DatatablesControllers;
+use App\Http\Controllers\backend\EmployeeController;
 use App\Http\Controllers\backend\RegistrationController;
 use App\Http\Controllers\backend\ForgotPasswordController;
 
@@ -41,6 +44,8 @@ Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPass
 
 #user list view
 Route::get('/userlist',[UserController::class,'viewUserlist'])->name('backend.userlist');
+#employee list view
+Route::get('employeelist',[EmployeeController::class,'employees'])->name('employeelist');
 
 
 
@@ -49,3 +54,7 @@ Route::get('/user/details/{user_id}',[UserController::class,'userDetails'])->nam
 Route::get('/update/user/{user_id}',[UserController::class,'userEdit'])->name('backend.user.edit');
 Route::put('/update/user/{user_id}',[UserController::class,'userUpdate'])->name('backend.userUpdate');
 Route::get('delete/user/{user_id}',[UserController::class,'userDelete'])->name('backend.userDelete');
+
+
+#yajra datatables
+Route::get('/employee/list',[DatatableController::class,'employeeList'])->name('backend.datatable.employeelist');

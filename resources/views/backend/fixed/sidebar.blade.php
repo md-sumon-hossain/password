@@ -2,6 +2,7 @@
     <a href="#"><i class="fa-solid fa-house-chimney-window"></i><span> Home</span></a>
     <a href="#"><i class="fa-solid fa-coins"></i><span> Product</span></a>
     <a href="{{ route('backend.userlist') }}"><i class="fa-solid fa-user"></i><span> User</span></a>
+    <a href="{{ route('employeelist') }}"><i class="fa-solid fa-user"></i><span> Employee</span></a>
     <a href="#"><i class="fa-solid fa-circle-info"></i><span> About</span></a>
 
 
