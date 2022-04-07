@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {   
-
+    #list view
     #step-1: we need to create a route with get method
     #step-2: make a blade file where we want to show the list of the users oe what we want
     #step-3: in the blade file we need to use a loop of the variable where we have stored all the users 
@@ -22,7 +22,7 @@ class UserController extends Controller
 
 
 
-
+    #details view
     #if we want to get a collection of data then we use   <  get(), all()> and read them with foreach loop
     #collection= get(), all()====== read with loop (foreach)
     #if we want to read any object or single item we can use  < first(), Find(), findOrFail() and can directly access them
@@ -35,7 +35,7 @@ class UserController extends Controller
 
 
 
-
+    #edit
     #step-1:parameter passing through the route
         #need to receicve the parameter in the method
         #need to pass the parameter while finding the user id, also pass the parameter with the route name in the blade where we want to use it
@@ -53,7 +53,7 @@ class UserController extends Controller
 
 
 
-
+    #update
     #step-1: parameter passing, receive and pass it
     #step-2:we will store the user->image in a variable
     #step-3: we will check wheather there is any image or not ot and as amse procedure as uploading image and update the user , we have to use 'put' method in the route  and also in the form 
@@ -79,7 +79,20 @@ class UserController extends Controller
         'image'=>$filename,
         ]);
         return redirect()->route('backend.userlist');
-        }
+    }
+
+
+
+
+    #delete
+    #step-1: parameter passing and a 'get' method route
+    #step-2: call the user model and find() the user id 
+    #step-3: call the 'delete()' method and return the view
+    public function userDelete($user_id){
+        User::find($user_id)->delete();
+        return redirect()->back();
+    }
+
 
 
 }

@@ -48,3 +48,4 @@ Route::get('/userlist',[UserController::class,'viewUserlist'])->name('backend.us
 Route::get('/user/details/{user_id}',[UserController::class,'userDetails'])->name('backend.userDetails');
 Route::get('/update/user/{user_id}',[UserController::class,'userEdit'])->name('backend.user.edit');
 Route::put('/update/user/{user_id}',[UserController::class,'userUpdate'])->name('backend.userUpdate');
+Route::get('delete/user/{user_id}',[UserController::class,'userDelete'])->name('backend.userDelete');
