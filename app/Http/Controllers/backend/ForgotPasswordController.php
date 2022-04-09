@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Mail;
 class ForgotPasswordController extends Controller
 {
 
-
+    
     #email input submit blade
     public function showForgetPasswordForm()
     {
