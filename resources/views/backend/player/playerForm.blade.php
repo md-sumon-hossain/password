@@ -17,13 +17,7 @@
               <input type="text" placeholder="Describe" name="country" required>
 
               <label for="img"><b>IMAGE</b></label>
-              <input type="file" placeholder="Enter your image" name="image[]" >
-
-              <label for="img"><b>Add Image</b></label>
-              <input type="file" placeholder="Enter your image" name="image[]" >
-
-              <label for="img"><b>Add Image</b></label>
-              <input type="file" placeholder="Enter your image" name="image[]" >
+              <input type="file" placeholder="Enter your image" name="image[]" multiple>
           
               <button type="submit">Submit</button>
             </div>

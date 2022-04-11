@@ -9,4 +9,9 @@ class Player extends Model
 {
     use HasFactory;
     protected $guarded=[];
+
+
+    protected $casts = [
+        'image' => 'array',
+    ];
 }

@@ -22,13 +22,16 @@ class MultiImageController extends Controller
 
     public function store(Request $request){
 
-        $images=[];
+        #in this variable we jist put all the players info in an array 
+        $data = [
+            'name' => $request->name,
+            'country' => $request->country,
+        ];
 
         #step 1: check image exist in this request.
         if($request->hasFile('image')){
-
             #store the images in item variable
-            foreach($request->file('image') as $file){
+            foreach($request->file('image') as $key=>$file){
 
                 # step 2: generate file name
                 $filename=date('Ymdhis').'.'.$file->getClientOriginalExtension();
@@ -37,13 +40,17 @@ class MultiImageController extends Controller
                 $file->storeAs('images',$filename);
 
                 $images[]=$filename;
+                
             }
+            $data['image'] = $images ?? [];
+
+
         }
 
         #creating players
-        Player::create([
-            'name'=>$request->name,
-            'country'=>$request->country,
+        #here we called the 
+        Player::create($data);
+            
             #step-1: go to the .env file and make th file system public. it remains local by defaults . do as same as .env , in the .env.example file
             #step-2: now go to the filesystems.php directory in the config.php and then
                 #w-1:in the public driver change the storage path and also the url. both should be same 
@@ -52,10 +59,10 @@ class MultiImageController extends Controller
                 #w-1: we need to declear  <  enctype="multipart/form-data" >
             #step-4: in the list blade we need to define it by    <img src="{{asset('/uploads/images'.$user->image)}}" width="90px">
             #step-5: command this-> php artisan storage:link    to declear the image directory
-            'image'=>$filename,
+            
             
 
-        ]);
+        
         return back();
 
     }
