@@ -8,7 +8,7 @@
     {{-- <a href="{{ route('backend.userlist') }}"><i class="fa-solid fa-user"></i><span> Players</span></a> --}}
     <a href="{{ route('players.image.form') }}"><i class="fa-solid fa-circle-info"></i><span> players </span></a>
 
-    <a href="#"><i class="fa-solid fa-circle-info"></i><span> About</span></a>
+    <a href="{{ route('service.index') }}"><i class="fa-solid fa-circle-info"></i><span> service</span></a>
 
 
     @if (Auth::user())

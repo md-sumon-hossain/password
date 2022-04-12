@@ -10,6 +10,7 @@ use App\Http\Controllers\backend\RegistrationController;
 use App\Http\Controllers\backend\ForgotPasswordController;
 use App\Http\Controllers\backend\MultiImageController;
 use App\Http\Controllers\backend\PostController;
+use App\Http\Controllers\backend\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +71,11 @@ Route::get('post/list',[PostController::class,'postlist'])->name('post.list');
 #multiple image
 Route::get('/players/form',[MultiImageController::class, 'imageInputForm'])->name('players.image.form');
 Route::post('/players/store',[MultiImageController::class, 'store'])->name('players.store');
+
+
+
+#resource route and controller for service 
+Route::resource('service', ServiceController::class);
 
 
 
