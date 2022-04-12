@@ -21,7 +21,7 @@ class UserController extends Controller
     }
 
 
-
+    
     #details view
     #if we want to get a collection of data then we use   <  get(), all()> and read them with foreach loop
     #collection= get(), all()====== read with loop (foreach)
