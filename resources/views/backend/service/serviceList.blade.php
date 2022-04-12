@@ -23,8 +23,8 @@
                   <td>{{$service->description}}</td>
                   <td>
                       <div class="btn-group">
-                        <form action="#" method="POST">
-                          {{-- @method('put') --}}
+                        <form action="{{ route('backend.service.status.update',$service->id) }}" method="POST">
+                          @method('put')
                           @csrf
                           <div style="display: flex; align-items: center;">
                           <div style="padding-right: 10px;">

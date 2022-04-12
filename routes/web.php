@@ -1,16 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\backend\PostController;
 use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\backend\LoginController;
-use App\Http\Controllers\backend\DatatableController;
-use App\Http\Controllers\backend\DatatablesControllers;
+use App\Http\Controllers\backend\StatusController;
+use App\Http\Controllers\backend\ServiceController;
 use App\Http\Controllers\backend\EmployeeController;
+use App\Http\Controllers\backend\DatatableController;
+use App\Http\Controllers\backend\MultiImageController;
+use App\Http\Controllers\backend\DatatablesControllers;
 use App\Http\Controllers\backend\RegistrationController;
 use App\Http\Controllers\backend\ForgotPasswordController;
-use App\Http\Controllers\backend\MultiImageController;
-use App\Http\Controllers\backend\PostController;
-use App\Http\Controllers\backend\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,6 +77,7 @@ Route::post('/players/store',[MultiImageController::class, 'store'])->name('play
 
 #resource route and controller for service 
 Route::resource('service', ServiceController::class);
-
+# service status change
+Route::put('services/{id}',[StatusController::class,'statusUpdate'])->name('backend.service.status.update');
 
 
