@@ -12,6 +12,7 @@ use App\Http\Controllers\backend\MultiImageController;
 use App\Http\Controllers\backend\DatatablesControllers;
 use App\Http\Controllers\backend\RegistrationController;
 use App\Http\Controllers\backend\ForgotPasswordController;
+use App\Http\Controllers\backend\SolidController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,8 +49,7 @@ Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPass
 
 #user list view
 Route::get('/userlist',[UserController::class,'viewUserlist'])->name('backend.userlist');
-#employee list view
-Route::get('employeelist',[EmployeeController::class,'employees'])->name('employeelist');
+
 
 
 
@@ -79,5 +79,14 @@ Route::post('/players/store',[MultiImageController::class, 'store'])->name('play
 Route::resource('service', ServiceController::class);
 # service status change
 Route::put('services/{id}',[StatusController::class,'statusUpdate'])->name('backend.service.status.update');
+
+
+
+#employee list view
+Route::get('employeelist',[EmployeeController::class,'employees'])->name('employeelist');
+# SRP - Single Responsibility principle
+Route::get('/solid/form',[SolidController::class,'create'])->name('solid.create');
+Route::post('/solid/form',[SolidController::class,'store'])->name('solid.store');
+
 
 

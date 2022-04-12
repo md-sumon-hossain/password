@@ -20,4 +20,6 @@ class EmployeeController extends Controller
         return view('backend.employee.employeelist',compact('employees'));
     }
 
+
+
 }
