@@ -7,6 +7,28 @@ use Illuminate\Http\Request;
 
 class GitController extends Controller
 {
+    # create new project via composer
+
+    #s-1: terminal,
+    # composer create-project laravel/laravel app-name
+    # cd app-name
+    # php artisan serve
+
+    #s-2: gir new repository
+    # create new repo without READadd.me file
+    # git init
+    # git add .
+    # git commit -m "laravel Installation"
+    # go over ssh key and     git remote add origin + ssh key link 
+    # git push -u origin master
+
+
+
+
+
+
+
+
     #project upload
 
     # git status
@@ -15,12 +37,18 @@ class GitController extends Controller
     # git push origin master/main
 
 
+
+
+
     #git clone 
 
     # git clone 'github link of the project'
     # composer install
     # cp .env.example .env 
     # php artisan key:generate
+
+
+
 
 
     #branch push
